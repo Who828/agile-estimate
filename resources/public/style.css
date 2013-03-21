@@ -1,21 +1,33 @@
+body {
+  background-color: #202020;
+  color: #606686;
+  text-align: center;
+}
+
 .container {
   text-align: center;
-  padding: 10%;
-  height: 400px;
+  margin: 40px auto;
+  width: 800px;
 }
 
 .column {
   height: 350px;
   width: 100px;
-  display: inline-block;
+  float: left;
   text-align: center;
   margin: 0 50px;
 }
 
-.variable {
+.results {
 }
 
-.slider, .results {
+.estimates {
+  margin-top: 40px;
+  color: #EFEFEF;
+  display: block;
+}
+
+.slider {
   height: 250px;
   margin: 40px;
 }
@@ -25,6 +37,36 @@
   text-align: center;
 }
 
+.variable-name {
+  color: #EFEFEF;
+  font-weight: bold;
+}
 .dont-show {
   display: none;
+}
+
+.quote {
+  background-color: #EFEFEF;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+h3 {
+  padding: 80px 10px 10px;
+  padding-top: 80px;
+  font-size: 20px;
+  color: #666;
+  clear: both;
+}
+
+h4 {
+  padding: 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  margin-bottom: 40px;
+}
+
+a {
+  color: #FFCD84;
+  text-decoration: none;
 }
