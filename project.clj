@@ -11,6 +11,6 @@
       :source-path "src/cljs"
       :compiler {
         :output-to "resources/public/estimate.js"
-        :optimization :whitespace
+        :optimization :advanced
         :pretty-print true
         }}]})
