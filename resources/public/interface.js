@@ -30,6 +30,24 @@ function setUpSliders () {
   });
 }
 
+function nextElement (value, position) {
+  var element = $("<span>|<br />" + value + "</span>");
+  element.addClass("step-value");
+  element.css("margin-left", position);
+  console.log(position);
+  return element;
+}
+
+function setUpSteps (container, sliderWidth, maxValue, stepValue) {
+  noOfDivisions = maxValue / stepValue;
+  divisionWidth = sliderWidth/(noOfDivisions + 1);
+
+  for(var i = 0; i <= noOfDivisions; i++) {
+    var next = nextElement(stepValue*i, divisionWidth);
+    $(container).append(next);
+  }
+}
+
 $(function() {
   initialize(10, 6);
   setUpSliders();

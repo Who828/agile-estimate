@@ -31,6 +31,11 @@ div.slider {
   text-align: center;
 }
 
+.step-value {
+  display: inline-block;
+  text-align: center;
+}
+
 .variable-name {
   text-align: left;
   color: #287D7D;
