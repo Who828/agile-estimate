@@ -10,15 +10,9 @@ body {
   width: 800px;
 }
 
-.column {
-  height: 350px;
-  width: 100px;
-  float: left;
-  text-align: center;
-  margin: 0 50px;
-}
-
-.results {
+.row {
+  text-align: left;
+  margin-bottom: 30px;
 }
 
 .estimates {
@@ -28,8 +22,8 @@ body {
 }
 
 div.slider {
-  height: 250px;
-  margin: 40px;
+  width : 750px;
+  display: inline-block;
 }
 
 .variable-value {
@@ -38,9 +32,12 @@ div.slider {
 }
 
 .variable-name {
+  text-align: left;
   color: #287D7D;
   font-weight: bold;
+  margin-bottom: 10px;
 }
+
 .dont-show {
   display: none;
 }

@@ -13,7 +13,7 @@ function setUpSliders () {
     min: 0,
     value: 10,
     animate: true,
-    orientation: "vertical"
+    orientation: "horizontal"
   };
 
   opts['max'] = 50;
