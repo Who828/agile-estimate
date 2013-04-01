@@ -27,7 +27,7 @@ body {
   display: block;
 }
 
-.slider {
+div.slider {
   height: 250px;
   margin: 40px;
 }
