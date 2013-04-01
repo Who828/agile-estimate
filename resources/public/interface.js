@@ -11,13 +11,14 @@ function initialize (velocity, stories) {
 function setUpSliders () {
   var opts = {
     min: 0,
-    max: 50,
     value: 10,
     animate: true,
     orientation: "vertical"
   };
 
+  opts['max'] = 50;
   vSlider = $(".velocity.slider").slider(opts);
+  opts['max'] = 30;
   sSlider = $(".stories.slider").slider(opts);
   vSlider.bind('slide', function( event, ui ) {
     $("input#velocity").val(ui.value);

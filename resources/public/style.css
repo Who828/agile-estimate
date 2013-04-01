@@ -1,6 +1,6 @@
 body {
-  background-color: #202020;
-  color: #606686;
+  background-color: #F2F2F2;
+  color: #1C344C;
   text-align: center;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .estimates {
   margin-top: 40px;
-  color: #EFEFEF;
+  color: #287D7D;
   display: block;
 }
 
@@ -38,35 +38,25 @@ body {
 }
 
 .variable-name {
-  color: #EFEFEF;
+  color: #287D7D;
   font-weight: bold;
 }
 .dont-show {
   display: none;
 }
 
-.quote {
-  background-color: #EFEFEF;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-
-h3 {
-  padding: 80px 10px 10px;
-  padding-top: 80px;
-  font-size: 20px;
-  color: #666;
-  clear: both;
-}
-
 h4 {
   padding: 10px;
-  font-size: 12px;
+  font-size: 26px;
   font-family: sans-serif;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 a {
   color: #FFCD84;
   text-decoration: none;
+}
+
+hr {
+  margin-bottom: 40px;
 }
