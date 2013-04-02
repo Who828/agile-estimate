@@ -2,7 +2,8 @@
   :description "FIXME: write description"
   :dependencies [[org.clojure/clojure "1.4.0"]
   [domina "1.0.0"]
-  [org.clojure/google-closure-library-third-party "0.0-2029"]]
+  [org.clojure/google-closure-library-third-party "0.0-2029"]
+  [prismatic/dommy "0.1.0"]]
   :plugins [[lein-cljsbuild "0.2.3"]]
   :source-path "src/clj"
   :main cljs-intro.core

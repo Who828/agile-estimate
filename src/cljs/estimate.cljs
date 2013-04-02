@@ -1,7 +1,8 @@
 (ns cljs-intro.estimate
   (:require
     [domina :as d]
-    [clojure.browser.event :as event]))
+    [clojure.browser.event :as event]
+    [dommy.template :as template]))
 
 (def stats-button (d/by-id "stats-btn"))
 
@@ -33,10 +34,14 @@
 (event/listen
   stats-button
   "click"
-  (fn [] (d/set-text! 
-    (d/by-id "results")
-    (clj->js 
-      (estimate 
-        (d/value (d/by-id "velocity"))
-        (d/value (d/by-id "stories")))))))
-
+  (fn []
+    (def estimates (estimate (d/value (d/by-id "velocity")) (d/value (d/by-id "stories"))))
+    (d/set-html! (d/by-id "res")
+      (template/node [:div
+        (for [est estimates]
+          [:div.story
+            [:img.star {:src "/images/star.png"}]
+            [:div.text (cljs-intro.stories/rand-sentence)]
+            [:div.estimate est]
+          ])
+      ]))))

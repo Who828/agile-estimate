@@ -5,8 +5,6 @@ function abracadabra () {
 function initialize (velocity, stories) {
   $("input#velocity").val(velocity);
   $("input#stories").val(stories);
-  window.numStories = 0;
-  updateStories(stories);
   abracadabra();
 }
 
@@ -31,29 +29,9 @@ function setUpSliders () {
   sSlider.bind('slide', function( event, ui ) {
     $("input#stories").val(ui.value);
     abracadabra();
-    updateStories(ui.value);
   });
 }
 
-function updateStories(numStories) {
-  var n = Math.abs(numStories - window.numStories);
-  
-  if(numStories < window.numStories) {
-    for(var i = 0; i< n; i++) {
-      $('div#stories').children().last().remove();
-    }
-  } else {
-    for(var i = 0; i< n; i++) {
-      var storyDiv = $(document.createElement('div'));
-      storyDiv.addClass('story');
-      storyDiv.append("<img class='star' src='/images/star.png'></img>");
-      storyDiv.append("<div class='text'>" + cljs_intro.stories.rand_sentence() + "</div>");
-      storyDiv.append("<div class='estimate'></div>");
-      $('div#stories').append(storyDiv);
-    }
-  }
-  window.numStories = numStories;
-}
 
 function nextElement (value, position) {
   var element = $("<span>|<br />" + value + "</span>");

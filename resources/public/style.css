@@ -64,17 +64,17 @@ hr {
   margin-bottom: 40px;
 }
 
-#stories {
+#res {
   border: 1px solid #AAA;  
 }
 
-.story { 
+.story {
   clear: left;
   border: 1px solid #AAA;
   padding: 5px;
   background-color: #ACCBEC;
 }
 
-img.star { 
+img.star {
   width: 32px;
 }
