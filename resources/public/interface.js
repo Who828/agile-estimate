@@ -14,7 +14,7 @@ function setUpSliders () {
   var opts = {
     range: "min",
     min: 0,
-    value: 10,
+    value: 12,
     animate: true,
     orientation: "horizontal"
   };
@@ -22,6 +22,7 @@ function setUpSliders () {
   opts['max'] = 50;
   vSlider = $(".velocity.slider").slider(opts);
   opts['max'] = 30;
+  opts['value'] = 6;
   sSlider = $(".stories.slider").slider(opts);
   vSlider.bind('slide', function( event, ui ) {
     $("input#velocity").val(ui.value);
@@ -39,7 +40,7 @@ function updateStories(numStories) {
   
   if(numStories < window.numStories) {
     for(var i = 0; i< n; i++) {
-      $('div#stories :last-child').remove();
+      $('div#stories').children().last().remove();
     }
   } else {
     for(var i = 0; i< n; i++) {
@@ -73,6 +74,6 @@ function setUpSteps (container, sliderWidth, maxValue, stepValue) {
 }
 
 $(function() {
-  initialize(10, 6);
-  setUpSliders();
+  initialize(12, 6);
+  setUpSliders();  
 });
