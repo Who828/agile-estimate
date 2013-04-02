@@ -5,7 +5,7 @@ function abracadabra () {
 function initialize (velocity, stories) {
   $("input#velocity").val(velocity);
   $("input#stories").val(stories);
-  abracadabra();
+  //abracadabra();
 }
 
 function setUpSliders () {

@@ -37,11 +37,13 @@
   (fn []
     (def estimates (estimate (d/value (d/by-id "velocity")) (d/value (d/by-id "stories"))))
     (d/set-html! (d/by-id "res")
-      (template/node [:div
+      (template/node [:div.stories_table
         (for [est estimates]
           [:div.story
+            [:img.triangle {:src "/images/triangle.png"}]
             [:img.star {:src "/images/star.png"}]
-            [:div.text (cljs-intro.stories/rand-sentence)]
-            [:div.estimate est]
+            [:span.text (cljs-intro.stories/rand-sentence)]
+            [:div.estimate est
+              [:img.start {:src "/images/start.png"}]]
           ])
       ]))))

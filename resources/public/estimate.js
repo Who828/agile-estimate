@@ -26600,23 +26600,23 @@ goog.require("domina");
 cljs_intro.estimate.stats_button = domina.by_id.call(null, "stats-btn");
 cljs_intro.estimate.all_estimate = function all_estimate(amount, point_cap, stories, choices) {
   if(function() {
-    var and__3822__auto____46353 = cljs.core._EQ_.call(null, amount, 0);
-    if(and__3822__auto____46353) {
+    var and__3822__auto____120694 = cljs.core._EQ_.call(null, amount, 0);
+    if(and__3822__auto____120694) {
       return cljs.core._EQ_.call(null, stories, 0)
     }else {
-      return and__3822__auto____46353
+      return and__3822__auto____120694
     }
   }()) {
     return cljs.core.PersistentVector.fromArray([choices], true)
   }else {
     if(function() {
-      var or__3824__auto____46354 = amount < 0;
-      if(or__3824__auto____46354) {
-        return or__3824__auto____46354
+      var or__3824__auto____120695 = amount < 0;
+      if(or__3824__auto____120695) {
+        return or__3824__auto____120695
       }else {
-        var or__3824__auto____46355 = cljs.core._EQ_.call(null, point_cap, 0);
-        if(or__3824__auto____46355) {
-          return or__3824__auto____46355
+        var or__3824__auto____120696 = cljs.core._EQ_.call(null, point_cap, 0);
+        if(or__3824__auto____120696) {
+          return or__3824__auto____120696
         }else {
           return cljs.core._EQ_.call(null, stories, 0)
         }
@@ -26633,11 +26633,11 @@ cljs_intro.estimate.all_estimate = function all_estimate(amount, point_cap, stor
   }
 };
 cljs_intro.estimate.estimate = function estimate(amount, stories) {
-  var coll__46357 = cljs_intro.estimate.all_estimate.call(null, amount, 3, stories, cljs.core.PersistentVector.EMPTY);
-  if(cljs.core.empty_QMARK_.call(null, coll__46357)) {
+  var coll__120698 = cljs_intro.estimate.all_estimate.call(null, amount, 3, stories, cljs.core.PersistentVector.EMPTY);
+  if(cljs.core.empty_QMARK_.call(null, coll__120698)) {
     return cljs.core.PersistentVector.EMPTY
   }else {
-    return cljs.core.shuffle.call(null, cljs.core.rand_nth.call(null, coll__46357))
+    return cljs.core.shuffle.call(null, cljs.core.rand_nth.call(null, coll__120698))
   }
 };
 cljs_intro.estimate.clj__GT_js = function clj__GT_js(x) {
@@ -26648,11 +26648,11 @@ cljs_intro.estimate.clj__GT_js = function clj__GT_js(x) {
       return cljs.core.name.call(null, x)
     }else {
       if(cljs.core.map_QMARK_.call(null, x)) {
-        return cljs.core.reduce.call(null, function(m, p__46363) {
-          var vec__46364__46365 = p__46363;
-          var k__46366 = cljs.core.nth.call(null, vec__46364__46365, 0, null);
-          var v__46367 = cljs.core.nth.call(null, vec__46364__46365, 1, null);
-          return cljs.core.assoc.call(null, m, clj__GT_js.call(null, k__46366), clj__GT_js.call(null, v__46367))
+        return cljs.core.reduce.call(null, function(m, p__120704) {
+          var vec__120705__120706 = p__120704;
+          var k__120707 = cljs.core.nth.call(null, vec__120705__120706, 0, null);
+          var v__120708 = cljs.core.nth.call(null, vec__120705__120706, 1, null);
+          return cljs.core.assoc.call(null, m, clj__GT_js.call(null, k__120707), clj__GT_js.call(null, v__120708))
         }, cljs.core.ObjMap.EMPTY, x).strobj()
       }else {
         if(cljs.core.coll_QMARK_.call(null, x)) {
@@ -26670,14 +26670,15 @@ cljs_intro.estimate.clj__GT_js = function clj__GT_js(x) {
 };
 clojure.browser.event.listen.call(null, cljs_intro.estimate.stats_button, "click", function() {
   cljs_intro.estimate.estimates = cljs_intro.estimate.estimate.call(null, domina.value.call(null, domina.by_id.call(null, "velocity")), domina.value.call(null, domina.by_id.call(null, "stories")));
-  return domina.set_html_BANG_.call(null, domina.by_id.call(null, "res"), dommy.template.node.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div", function() {
-    var iter__2460__auto____46374 = function iter__46368(s__46369) {
+  return domina.set_html_BANG_.call(null, domina.by_id.call(null, "res"), dommy.template.node.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.stories_table", function() {
+    var iter__2460__auto____120715 = function iter__120709(s__120710) {
       return new cljs.core.LazySeq(null, false, function() {
-        var s__46369__46372 = s__46369;
+        var s__120710__120713 = s__120710;
         while(true) {
-          if(cljs.core.seq.call(null, s__46369__46372)) {
-            var est__46373 = cljs.core.first.call(null, s__46369__46372);
-            return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.story", cljs.core.PersistentVector.fromArray(["\ufdd0'img.star", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/star.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'div.text", cljs_intro.stories.rand_sentence.call(null)], true), cljs.core.PersistentVector.fromArray(["\ufdd0'div.estimate", est__46373], true)], true), iter__46368.call(null, cljs.core.rest.call(null, s__46369__46372)))
+          if(cljs.core.seq.call(null, s__120710__120713)) {
+            var est__120714 = cljs.core.first.call(null, s__120710__120713);
+            return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.story", cljs.core.PersistentVector.fromArray(["\ufdd0'img.triangle", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/triangle.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'img.star", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/star.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'span.text", cljs_intro.stories.rand_sentence.call(null)], 
+            true), cljs.core.PersistentVector.fromArray(["\ufdd0'div.estimate", est__120714, cljs.core.PersistentVector.fromArray(["\ufdd0'img.start", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/start.png"})], true)], true)], true), iter__120709.call(null, cljs.core.rest.call(null, s__120710__120713)))
           }else {
             return null
           }
@@ -26685,6 +26686,6 @@ clojure.browser.event.listen.call(null, cljs_intro.estimate.stats_button, "click
         }
       }, null)
     };
-    return iter__2460__auto____46374.call(null, cljs_intro.estimate.estimates)
+    return iter__2460__auto____120715.call(null, cljs_intro.estimate.estimates)
   }()], true)))
 });

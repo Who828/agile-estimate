@@ -1,3 +1,20 @@
+.quote {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 40px;
+}
+
+.sub-head {
+  margin-bottom: 40px;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+p {
+  font-family: 'Sanchez', serif;
+  font-size: 20px;
+}
+
 body {
   background-image:url('./images/wavegrid.png');
   color: #1C344C;
@@ -45,9 +62,6 @@ div.slider {
   margin-bottom: 10px;
 }
 
-.dont-show {
-}
-
 h4 {
   padding: 10px;
   font-size: 26px;
@@ -60,21 +74,49 @@ a {
   text-decoration: none;
 }
 
-hr {
-  margin-bottom: 40px;
-}
-
 #res {
-  border: 1px solid #AAA;  
+  width: 760px;
 }
 
-.story {
-  clear: left;
-  border: 1px solid #AAA;
-  padding: 5px;
-  background-color: #ACCBEC;
+.story {  
+  padding: 0 5px;
+  text-align: left;
+  height: 28px;
+  line-height: 23px;  
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #D4D4D4;
+  background-color: #DDEAF4;
+  width: 760px;
 }
 
-img.star {
-  width: 32px;
+.story:first-child {
+  border-top: none;
+}
+
+.text {
+  padding-left: 10px;
+}
+
+.estimate {
+  float: right;
+}
+
+
+.stories_table {
+  width: 760px;
+}
+
+.get-estimates-button {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 30px;
+  color: #EEE;
+  background-color: #1C344C; 
+  padding: 10px;
+  margin: 0 auto;
+  width: 20px;
+  letter-spacing: 0.1em;
+}
+
+.get-estimates-button:hover {
+  cursor:pointer;
 }
