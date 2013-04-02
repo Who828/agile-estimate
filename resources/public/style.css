@@ -26,6 +26,8 @@ div.slider {
   display: inline-block;
 }
 
+.ui-slider-range { background: #287D7D !important; }
+
 .variable-value {
   width: 40px;
   text-align: center;
@@ -38,7 +40,7 @@ div.slider {
 
 .variable-name {
   text-align: left;
-  color: #287D7D;
+  color: #1C344C
   font-weight: bold;
   margin-bottom: 10px;
 }

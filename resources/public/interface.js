@@ -10,6 +10,7 @@ function initialize (velocity, stories) {
 
 function setUpSliders () {
   var opts = {
+    range: "min",
     min: 0,
     value: 10,
     animate: true,
