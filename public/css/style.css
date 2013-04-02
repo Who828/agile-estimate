@@ -1,6 +1,6 @@
 body {
-  background-color: #202020;
-  color: #606686;
+  background-image:url('../images/wavegrid.png');
+  color: #1C344C;
   text-align: center;
 }
 
@@ -10,63 +10,71 @@ body {
   width: 800px;
 }
 
-.column {
-  height: 350px;
-  width: 100px;
-  float: left;
-  text-align: center;
-  margin: 0 50px;
-}
-
-.results {
+.row {
+  text-align: left;
+  margin-bottom: 30px;
 }
 
 .estimates {
   margin-top: 40px;
-  color: #EFEFEF;
+  color: #287D7D;
   display: block;
 }
 
-.slider {
-  height: 250px;
-  margin: 40px;
+div.slider {
+  width : 750px;
+  display: inline-block;
 }
+
+.ui-slider-range { background: #287D7D !important; }
 
 .variable-value {
   width: 40px;
   text-align: center;
 }
 
+.step-value {
+  display: inline-block;
+  text-align: center;
+}
+
 .variable-name {
-  color: #EFEFEF;
+  text-align: left;
+  color: #1C344C
   font-weight: bold;
+  margin-bottom: 10px;
 }
+
 .dont-show {
-  display: none;
-}
-
-.quote {
-  background-color: #EFEFEF;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-
-h3 {
-  padding: 80px 10px 10px;
-  padding-top: 80px;
-  font-size: 20px;
-  color: #666;
-  clear: both;
 }
 
 h4 {
   padding: 10px;
-  font-size: 12px;
+  font-size: 26px;
   font-family: sans-serif;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 a {
   color: #FFCD84;
   text-decoration: none;
+}
+
+hr {
+  margin-bottom: 40px;
+}
+
+#res {
+  border: 1px solid #AAA;  
+}
+
+.story {
+  clear: left;
+  border: 1px solid #AAA;
+  padding: 5px;
+  background-color: #ACCBEC;
+}
+
+img.star {
+  width: 32px;
 }

@@ -10,14 +10,17 @@ function initialize (velocity, stories) {
 
 function setUpSliders () {
   var opts = {
+    range: "min",
     min: 0,
-    max: 50,
-    value: 10,
+    value: 12,
     animate: true,
-    orientation: "vertical"
+    orientation: "horizontal"
   };
 
+  opts['max'] = 50;
   vSlider = $(".velocity.slider").slider(opts);
+  opts['max'] = 30;
+  opts['value'] = 6;
   sSlider = $(".stories.slider").slider(opts);
   vSlider.bind('slide', function( event, ui ) {
     $("input#velocity").val(ui.value);
@@ -29,7 +32,26 @@ function setUpSliders () {
   });
 }
 
+
+function nextElement (value, position) {
+  var element = $("<span>|<br />" + value + "</span>");
+  element.addClass("step-value");
+  element.css("margin-left", position);
+  console.log(position);
+  return element;
+}
+
+function setUpSteps (container, sliderWidth, maxValue, stepValue) {
+  noOfDivisions = maxValue / stepValue;
+  divisionWidth = sliderWidth/(noOfDivisions + 1);
+
+  for(var i = 0; i <= noOfDivisions; i++) {
+    var next = nextElement(stepValue*i, divisionWidth);
+    $(container).append(next);
+  }
+}
+
 $(function() {
-  initialize(10, 6);
-  setUpSliders();
+  initialize(12, 6);
+  setUpSliders();  
 });
