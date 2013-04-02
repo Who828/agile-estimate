@@ -47,7 +47,7 @@ function updateStories(numStories) {
       var storyDiv = $(document.createElement('div'));
       storyDiv.addClass('story');
       storyDiv.append("<img class='star' src='/images/star.png'></img>");
-      storyDiv.append("<div class='text'></div>");
+      storyDiv.append("<div class='text'>" + cljs_intro.stories.rand_sentence() + "</div>");
       storyDiv.append("<div class='estimate'></div>");
       $('div#stories').append(storyDiv);
     }

@@ -15,8 +15,7 @@
   (let  [coll (all-estimate amount 3 stories [])]
   (if (empty? coll)
     []
-  (shuffle (rand-nth coll
-   )))))
+  (shuffle (rand-nth coll)))))
 
 (defn clj->js
   "Recursively transforms ClojureScript maps into Javascript objects,
@@ -34,5 +33,10 @@
 (event/listen
   stats-button
   "click"
-  (fn [] (d/set-text! (d/by-id "results") (clj->js (estimate (d/value (d/by-id "velocity")) (d/value (d/by-id "stories")))))))
+  (fn [] (d/set-text! 
+    (d/by-id "results")
+    (clj->js 
+      (estimate 
+        (d/value (d/by-id "velocity"))
+        (d/value (d/by-id "stories")))))))
 
