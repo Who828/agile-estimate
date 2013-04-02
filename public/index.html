@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="./css/Aristo/Aristo.css" />
+    <link rel="stylesheet" href="css/Aristo/Aristo.css" />
+    <link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
     <title>Agile Estimate</title>
   </head>
 
   <body>
     <div class="container">
-      <h4 class="quote">Estimating agile projects since April 1st 2013</h4>
+      <h4 class="quote">Estimating Agile Projects since April 1st 2013</h4>
       <hr />
+      <h5 class="sub-head">"Estimation is hard. Let us do it for you."</h5>
       <div class="velocity variable row">
         <p class="variable-name">Velocity</p>
         <div class="velocity slider"></div>
@@ -25,10 +28,10 @@
         <div class="steps"></div>
       </div>
 
+      <a class="dont-show get-estimates-button" type="button" id="stats-btn">Get Estimates!</a>
+
       <div class="results row">
-        <p class="variable-name">Estimates</p>
         <span id="results" class="estimates"></span>
-        <input class="dont-show" type="button" id="stats-btn" value="Get Estimates!" />
       </div>
 
       <div id="res"></div>
