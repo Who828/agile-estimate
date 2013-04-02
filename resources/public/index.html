@@ -1,44 +1,49 @@
+<!DOCTYPE HTML>
 <html>
-<head>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="./css/Aristo/Aristo.css" />
-  <link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-  <title>Agile Estimate</title>
-</head>
+  <head>
+    <meta charset='utf-8'> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/Aristo/Aristo.css" />
+    <link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+    <title>Agile Estimate</title>
+  </head>
 
-<body>
-  <div class="container">
-    <h4 class="quote">Estimating Agile Projects since April 1st 2013</h4>
-    <hr />
-    <h5 class="sub-head">"Estimation is hard. Let us do it for you."</h5>
-    <div class="velocity variable row">
-      <p class="variable-name">Velocity</p>
-      <div class="velocity slider"></div>
-      <input class="variable-value" id="velocity"/>
-      <div class="steps"></div>
+  <body>
+    <div class="container">
+      <h4 class="quote">Estimating Agile Projects since April 1st 2013</h4>
+      <hr />
+      <h5 class="sub-head">"Estimation is hard. Let us do it for you."</h5>
+      <div class="velocity variable row">
+        <p class="variable-name">Velocity</p>
+        <div class="velocity slider"></div>
+        <input class="variable-value" id="velocity"/>
+        <div class="steps"></div>
+      </div>
+
+      <div class="stories variable row">
+        <p class="variable-name">Stories</p>
+        <div class="stories slider"></div>
+        <input class="variable-value" id="stories"/>
+        <div class="steps"></div>
+      </div>
+
+      <a class="dont-show get-estimates-button" type="button" id="stats-btn">Get Estimates!</a>
+
+      <div class="results row">
+        <span id="results" class="estimates"></span>
+      </div>
+
+      <div id="res"></div>
     </div>
-
-    <div class="stories variable row">
-      <p class="variable-name">Stories</p>
-      <div class="stories slider"></div>
-      <input class="variable-value" id="stories"/>
-      <div class="steps"></div>
-    </div>
-
-    <a class="dont-show get-estimates-button" type="button" id="stats-btn">Get Estimates!</a>
-
-    <div class="results row">
-      <span id="results" class="estimates"></span>
-    </div>
-
-    <div id="res"></div>
-  </div>
-  <script src="interface.js"></script>
-  <script src="estimate.js"></script>
-</body>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+    <script>
+      var CLOSURE_NO_DEPS = true;
+    </script>
+    <script src="js/interface.js"></script>
+    <script src="js/estimate.js"></script>
+  </body>
 </html>
 
