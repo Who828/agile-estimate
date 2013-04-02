@@ -46,7 +46,6 @@ div.slider {
 }
 
 .dont-show {
-  display: none;
 }
 
 h4 {
@@ -64,3 +63,16 @@ a {
 hr {
   margin-bottom: 40px;
 }
+
+#stories {
+  border: 1px solid #AAA;  
+}
+
+.story { 
+  clear: left;
+  border: 1px solid #AAA;
+  padding: 5px;
+  background-color: #ACCBEC;
+}
+img.star { 
+  width: 32px;}
