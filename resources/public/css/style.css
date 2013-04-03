@@ -1,5 +1,3 @@
-@import "css/normalize.css"
-
 .quote {
   font-family: 'Londrina Solid', cursive;
   font-size: 40px;
@@ -27,7 +25,7 @@ body {
 .container {
   text-align: center;
   margin: 40px auto;
-  width: 803px;
+  width: 845px;
 }
 
 .row {
@@ -41,8 +39,8 @@ body {
   display: block;
 }
 
-div.slider {
-  width : 750px;
+.slider {
+  width : 790px;
   display: inline-block;
 }
 
@@ -130,7 +128,7 @@ a {
   background-color: #354A68;
 }
 
-img.oscar-wilde {
+.oscar-wilde {
   float: left;
   height: 150px;
   margin-left: 30px;
@@ -162,7 +160,7 @@ img.oscar-wilde {
   margin-top: 40px;
 }
 
-span.no-stories {
+.no-stories {
   font-family: sans-serif;
   color: #1C344C;
   font-size: 18px;
