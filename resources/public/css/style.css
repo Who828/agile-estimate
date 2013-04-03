@@ -161,3 +161,9 @@ img.oscar-wilde {
 .social-links {
   margin-top: 40px;
 }
+
+span.no-stories {
+  font-family: sans-serif;
+  color: #1C344C;
+  font-size: 18px;
+}

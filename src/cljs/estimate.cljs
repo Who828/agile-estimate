@@ -28,9 +28,10 @@
   (let [velocity (js/parseInt (d/value (d/by-id "velocity")))
         stories  (js/parseInt (d/value (d/by-id "stories")))]
        (d/set-html! (d/by-id "res")
-                    (cond
-                     (< velocity stories) (str "Velocity is too low to cover " stories " stories.")
-                     :else (str "Can't reach a velocity of " velocity " with " (humanize-number-of-stories stories) ".")))))
+                    (template/node [:span.no-stories
+                                    (cond
+                                     (< velocity stories) (str "Velocity is too low to cover " stories " stories.")
+                                     :else (str "Can't reach a velocity of " velocity " with " (humanize-number-of-stories stories) "."))]))))
 
 
 (defn display-estimates []
