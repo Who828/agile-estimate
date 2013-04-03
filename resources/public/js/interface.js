@@ -30,6 +30,14 @@ function setUpSliders () {
     $("input#stories").val(ui.value);
     abracadabra();
   });
+
+  $("input#stories").bind('keyup', function(event) {
+    sSlider.slider('value', $(event.target).val());
+  });
+
+  $("input#velocity").bind('keyup', function(event) {
+    vSlider.slider('value', $(event.target).val());
+  });
 }
 
 
