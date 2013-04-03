@@ -129,3 +129,27 @@ a {
   cursor:pointer;
   background-color: #354A68;
 }
+
+img.oscar-wilde {
+  float: left;
+  height: 150px;
+  margin-left: 30px;
+}
+
+.quote-text {
+  display: block;
+  padding: 30px;
+  margin-left: 150px;
+  text-align: left;
+  font-size: 16px;
+  color: black;
+}
+
+.blurb-quote {
+  height: 35px;
+  display: inline;
+}
+
+.blurb {
+  margin-top: 50px;
+}
