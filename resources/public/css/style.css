@@ -1,3 +1,5 @@
+@import "css/normalize.css"
+
 .quote {
   font-family: 'Londrina Solid', cursive;
   font-size: 40px;
@@ -25,7 +27,7 @@ body {
 .container {
   text-align: center;
   margin: 40px auto;
-  width: 800px;
+  width: 803px;
 }
 
 .row {
@@ -76,14 +78,15 @@ a {
 }
 
 #res {
-  width: 760px;
+  margin: 0 auto;
+  width: 770px;
 }
 
-.story {  
+.story {
   padding: 0 5px;
   text-align: left;
   height: 28px;
-  line-height: 23px;  
+  line-height: 23px;
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #D4D4D4;
   background-color: #DDEAF4;
@@ -102,16 +105,20 @@ a {
   float: right;
 }
 
+.start {
+  margin-left: 5px;
+}
 
 .stories_table {
-  width: 760px;
+  border: 1px solid gray;
+  width: 770px;
 }
 
 .get-estimates-button {
   font-family: 'Londrina Solid', cursive;
   font-size: 30px;
   color: #EEE;
-  background-color: #1C344C; 
+  background-color: #1C344C;
   padding: 10px 20px;
   margin: 0 auto;
   width: 20px;

@@ -11,7 +11,7 @@
     :builds [{
       :source-path "src/cljs"
       :compiler {
-        :output-to "resources/public/estimate.js"
+        :output-to "resources/public/js/estimate.js"
         :optimization :advanced
         :pretty-print true
         }}]})
