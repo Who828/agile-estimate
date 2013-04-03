@@ -28347,23 +28347,23 @@ goog.require("domina");
 cljs_intro.estimate.stats_button = domina.by_id.call(null, "stats-btn");
 cljs_intro.estimate.all_estimate = function all_estimate(amount, point_cap, stories, choices) {
   if(function() {
-    var and__3822__auto____155584 = cljs.core._EQ_.call(null, amount, 0);
-    if(and__3822__auto____155584) {
+    var and__3822__auto____343572 = cljs.core._EQ_.call(null, amount, 0);
+    if(and__3822__auto____343572) {
       return cljs.core._EQ_.call(null, stories, 0)
     }else {
-      return and__3822__auto____155584
+      return and__3822__auto____343572
     }
   }()) {
     return cljs.core.PersistentVector.fromArray([choices], true)
   }else {
     if(function() {
-      var or__3824__auto____155585 = amount < 0;
-      if(or__3824__auto____155585) {
-        return or__3824__auto____155585
+      var or__3824__auto____343573 = amount < 0;
+      if(or__3824__auto____343573) {
+        return or__3824__auto____343573
       }else {
-        var or__3824__auto____155586 = cljs.core._EQ_.call(null, point_cap, 0);
-        if(or__3824__auto____155586) {
-          return or__3824__auto____155586
+        var or__3824__auto____343574 = cljs.core._EQ_.call(null, point_cap, 0);
+        if(or__3824__auto____343574) {
+          return or__3824__auto____343574
         }else {
           return cljs.core._EQ_.call(null, stories, 0)
         }
@@ -28380,33 +28380,61 @@ cljs_intro.estimate.all_estimate = function all_estimate(amount, point_cap, stor
   }
 };
 cljs_intro.estimate.estimate = function estimate(amount, stories) {
-  var coll__155588 = cljs_intro.estimate.all_estimate.call(null, amount, 3, stories, cljs.core.PersistentVector.EMPTY);
-  if(cljs.core.empty_QMARK_.call(null, coll__155588)) {
+  var coll__343576 = cljs_intro.estimate.all_estimate.call(null, amount, 3, stories, cljs.core.PersistentVector.EMPTY);
+  if(cljs.core.empty_QMARK_.call(null, coll__343576)) {
     return cljs.core.PersistentVector.EMPTY
   }else {
-    return cljs.core.shuffle.call(null, cljs.core.rand_nth.call(null, coll__155588))
+    return cljs.core.shuffle.call(null, cljs.core.rand_nth.call(null, coll__343576))
   }
+};
+cljs_intro.estimate.humanize_number_of_stories = function humanize_number_of_stories(stories) {
+  if(cljs.core._EQ_.call(null, stories, 0)) {
+    return"no stories"
+  }else {
+    if(cljs.core._EQ_.call(null, stories, 1)) {
+      return"1 story"
+    }else {
+      if("\ufdd0'else") {
+        return[cljs.core.str(stories), cljs.core.str(" stories")].join("")
+      }else {
+        return null
+      }
+    }
+  }
+};
+cljs_intro.estimate.display_message = function display_message() {
+  var velocity__343579 = parseInt(domina.value.call(null, domina.by_id.call(null, "velocity")));
+  var stories__343580 = parseInt(domina.value.call(null, domina.by_id.call(null, "stories")));
+  return domina.set_html_BANG_.call(null, domina.by_id.call(null, "res"), velocity__343579 < stories__343580 ? [cljs.core.str("Velocity is too low to cover "), cljs.core.str(stories__343580), cljs.core.str(" stories.")].join("") : "\ufdd0'else" ? [cljs.core.str("Can't reach a velocity of "), cljs.core.str(velocity__343579), cljs.core.str(" with "), cljs.core.str(cljs_intro.estimate.humanize_number_of_stories.call(null, stories__343580)), cljs.core.str(".")].join("") : null)
 };
 cljs_intro.estimate.display_estimates = function display_estimates() {
   cljs_intro.estimate.estimates = cljs_intro.estimate.estimate.call(null, domina.value.call(null, domina.by_id.call(null, "velocity")), domina.value.call(null, domina.by_id.call(null, "stories")));
-  return domina.set_html_BANG_.call(null, domina.by_id.call(null, "res"), dommy.template.node.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.stories_table", function() {
-    var iter__2460__auto____155602 = function iter__155596(s__155597) {
-      return new cljs.core.LazySeq(null, false, function() {
-        var s__155597__155600 = s__155597;
-        while(true) {
-          if(cljs.core.seq.call(null, s__155597__155600)) {
-            var est__155601 = cljs.core.first.call(null, s__155597__155600);
-            return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.story", cljs.core.PersistentVector.fromArray(["\ufdd0'img.triangle", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/triangle.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'img.star", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/star.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'span.text", cljs_intro.stories.rand_sentence.call(null)], 
-            true), cljs.core.PersistentVector.fromArray(["\ufdd0'div.estimate", est__155601, cljs.core.PersistentVector.fromArray(["\ufdd0'img.start", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/start.png"})], true)], true)], true), iter__155596.call(null, cljs.core.rest.call(null, s__155597__155600)))
-          }else {
-            return null
-          }
-          break
-        }
-      }, null)
-    };
-    return iter__2460__auto____155602.call(null, cljs_intro.estimate.estimates)
-  }()], true)))
+  if(cljs.core.empty_QMARK_.call(null, cljs_intro.estimate.estimates)) {
+    return cljs_intro.estimate.display_message.call(null)
+  }else {
+    if("\ufdd0'else") {
+      return domina.set_html_BANG_.call(null, domina.by_id.call(null, "res"), dommy.template.node.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.stories_table", function() {
+        var iter__2460__auto____343594 = function iter__343588(s__343589) {
+          return new cljs.core.LazySeq(null, false, function() {
+            var s__343589__343592 = s__343589;
+            while(true) {
+              if(cljs.core.seq.call(null, s__343589__343592)) {
+                var est__343593 = cljs.core.first.call(null, s__343589__343592);
+                return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray(["\ufdd0'div.story", cljs.core.PersistentVector.fromArray(["\ufdd0'img.triangle", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/triangle.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'img.star", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/star.png"})], true), cljs.core.PersistentVector.fromArray(["\ufdd0'span.text", cljs_intro.stories.rand_sentence.call(null)], 
+                true), cljs.core.PersistentVector.fromArray(["\ufdd0'div.estimate", est__343593, cljs.core.PersistentVector.fromArray(["\ufdd0'img.start", cljs.core.ObjMap.fromObject(["\ufdd0'src"], {"\ufdd0'src":"/images/start.png"})], true)], true)], true), iter__343588.call(null, cljs.core.rest.call(null, s__343589__343592)))
+              }else {
+                return null
+              }
+              break
+            }
+          }, null)
+        };
+        return iter__2460__auto____343594.call(null, cljs_intro.estimate.estimates)
+      }()], true)))
+    }else {
+      return null
+    }
+  }
 };
 clojure.browser.event.listen.call(null, cljs_intro.estimate.stats_button, "click", cljs_intro.estimate.display_estimates);
 clojure.browser.event.listen.call(null, domina.by_id.call(null, "velocity"), "keyup", cljs_intro.estimate.display_estimates);

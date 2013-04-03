@@ -18,17 +18,34 @@
     []
   (shuffle (rand-nth coll)))))
 
+(defn humanize-number-of-stories [stories]
+  (cond
+   (= stories 0) "no stories"
+   (= stories 1) "1 story"
+   :else (str stories " stories")))
+
+(defn display-message []
+  (let [velocity (js/parseInt (d/value (d/by-id "velocity")))
+        stories  (js/parseInt (d/value (d/by-id "stories")))]
+       (d/set-html! (d/by-id "res")
+                    (cond
+                     (< velocity stories) (str "Velocity is too low to cover " stories " stories.")
+                     :else (str "Can't reach a velocity of " velocity " with " (humanize-number-of-stories stories) ".")))))
+
+
 (defn display-estimates []
-    (def estimates (estimate (d/value (d/by-id "velocity")) (d/value (d/by-id "stories"))))
-    (d/set-html! (d/by-id "res")
-                 (template/node [:div.stories_table
-                                 (for [est estimates]
-                                   [:div.story
-                                    [:img.triangle {:src "/images/triangle.png"}]
-                                    [:img.star {:src "/images/star.png"}]
-                                    [:span.text (cljs-intro.stories/rand-sentence)]
-                                    [:div.estimate est
-                                      [:img.start {:src "/images/start.png"}]]])])))
+  (def estimates (estimate (d/value (d/by-id "velocity")) (d/value (d/by-id "stories"))))
+  (cond
+   (empty? estimates) (display-message)
+   :else (d/set-html! (d/by-id "res")
+                      (template/node [:div.stories_table
+                                      (for [est estimates]
+                                        [:div.story
+                                         [:img.triangle {:src "/images/triangle.png"}]
+                                         [:img.star {:src "/images/star.png"}]
+                                         [:span.text (cljs-intro.stories/rand-sentence)]
+                                         [:div.estimate est
+                                          [:img.start {:src "/images/start.png"}]]])]))))
 
 (event/listen stats-button "click" display-estimates)
 (event/listen (d/by-id "velocity") "keyup" display-estimates)
