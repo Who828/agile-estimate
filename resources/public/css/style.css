@@ -19,7 +19,7 @@ p {
 }
 
 body {
-  background-image:url('./images/wavegrid.png');
+  background-image:url('../images/wavegrid.png');
   color: #1C344C;
   text-align: center;
 }
@@ -136,16 +136,20 @@ img.oscar-wilde {
   margin-left: 30px;
 }
 
-.quote-text {
+.blurb-quote {
   display: block;
-  padding: 30px;
   margin-left: 150px;
+  padding: 30px;
+}
+
+.blurb-quote-text {
   text-align: left;
   font-size: 16px;
   color: black;
+  display: inline;
 }
 
-.blurb-quote {
+.blurb-quote-mark {
   height: 35px;
   display: inline;
 }
