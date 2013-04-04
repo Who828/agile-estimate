@@ -165,3 +165,8 @@ a {
   color: #1C344C;
   font-size: 18px;
 }
+
+#logo {
+  margin-top: 20px;
+  width: 64px;
+}
